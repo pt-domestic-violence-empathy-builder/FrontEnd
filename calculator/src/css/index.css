@@ -129,3 +129,19 @@ table {
 * {
   box-sizing: border-box;
 }
+.location-input {
+  margin: 10px;
+  border: 2px solid #dda0dd;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+h4 {
+  font-family: 'Roboto', sans-serif;
+  color: #dda0dd;
+}
+h4.location-label {
+  font-size: 1.5rem;
+}
+h4.destination-label {
+  font-size: 1.5rem;
+}

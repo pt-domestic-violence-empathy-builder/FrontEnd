@@ -129,15 +129,48 @@ table {
 * {
   box-sizing: border-box;
 }
+*:focus {
+  outline: none;
+}
 .location-input {
   margin: 10px;
-  border: 2px solid #dda0dd;
+  border: 2px solid #632f8d;
   padding: 10px;
   border-radius: 0.5rem;
 }
+.moving-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  align-items: center;
+}
+.moving-form .location-form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.moving-form .destination-form {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+.moving-form button {
+  border: 2px solid #632f8d;
+  padding: 10px;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #632f8d;
+}
+.moving-form button:hover {
+  background: #632f8d;
+  color: white;
+}
 h4 {
   font-family: 'Roboto', sans-serif;
-  color: #dda0dd;
+  color: #632f8d;
 }
 h4.location-label {
   font-size: 1.5rem;

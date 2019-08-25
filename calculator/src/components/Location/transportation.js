@@ -14,37 +14,42 @@ const Transportation = (props) => {
     } = props;
     const [transitData,
         setTransitData] = useState([]);
-    const [isCar, setIsCar] = useState(false);
-    const [isTruck, setIsTruck] = useState(false);
 
     useEffect(() => {
         if (status) {
-            setTransitData([
-                ...transitData,
-                status
-            ]);
+            setTransitData([...transitData,status]);
         }
     }, [status])
 
     return (
         <div>
+            <h4>Method of transportation</h4>
+            <Field component='select' name='movingOptions' placeholder='Moving Options'>
+                <option> Select Transportation</option>
+                <option value={true}>Car</option>
+                <option value={true}>Moving Truck</option>
+            </Field>
             <Form>
-                <h4>Method of transportation</h4>
-                <Field components='select' name='movingOptions' placeholder='Moving Options'>
-                    <option value={isCar}>Car</option>
-                    <option value={isTruck}>Moving Truck</option>
-                </Field>
-                {isTruck && <p>form for moving truck fades in</p>}
-
+                
+                <button type='submit'>next</button>
             </Form>
         </div>
     )
 }
 
 const formikHOC = withFormik({
-    mapToPropsValues({}) {
-        return {}
+    mapToPropsValues({isCar, isTruck}) {
+        return {
+            isCar: isCar || false,
+            isTruck: isTruck || false
+        };
+    }, 
+    handleSubmit(values,{setStatus, resetForm}){
+        console.log('handleSubmit: then: res ', values );
+        setStatus(values);
+        resetForm();
     }
+
 })(Transportation)
 
 export default formikHOC;

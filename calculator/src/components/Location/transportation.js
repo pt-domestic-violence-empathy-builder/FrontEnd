@@ -1,28 +1,45 @@
-import React, {useEffect, useState} from 'react';
-import {Formik, FormikProps, Form, Field, Fieldset withFormik} from 'formik';
-import {Button} from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
+import { Formik, FormikProps, Form, Field, withFormik } from 'formik';
+import { Button } from 'semantic-ui-react';
 import Styled from 'styled-components';
 import * as Yup from 'yup';
+import Axios from 'axios';
 
-
-const Transportation = ({touched, values, errors, status}) =>  {
-    const [transitData,setTransitData] = useState([]);
+const Transportation = (props) => {
+    const {
+        touched,
+        values,
+        errors,
+        status
+    } = props;
+    const [transitData,
+        setTransitData] = useState([]);
+    const [isCar, setIsCar] = useState(false);
+    const [isTruck, setIsTruck] = useState(false);
 
     useEffect(() => {
         if (status) {
-            setTransitData([...transitData,status]);
+            setTransitData([
+                ...transitData,
+                status
+            ]);
         }
     }, [status])
-    
-    return(
+
+    return (
         <div>
             <Form>
                 <h4>Method of transportation</h4>
-                <h5>car</h5>
+                <Field components='select' name='movingOptions' placeholder='Moving Options'>
+                    <option value={isCar}>Car</option>
+                    <option value={isTruck}>Moving Truck</option>
+                </Field>
+                {isTruck && <p>form for moving truck fades in</p>}
 
             </Form>
         </div>
-    )}
+    )
+}
 
 const formikHOC = withFormik({
     mapToPropsValues({}) {

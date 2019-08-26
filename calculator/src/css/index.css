@@ -199,10 +199,10 @@ form.transit-options button {
   font-family: 'Roboto', sans-serif;
   color: #632f8d;
   font-weight: bold;
+  width: 100%;
 }
-form.transit-options button:hover {
-  background: #632f8d;
-  color: white;
+form.transit-options button p {
+  width: 100%;
 }
 form.transit-options label {
   font-family: 'Roboto', sans-serif;

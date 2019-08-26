@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {Router, Route, NavLink} from "react-router-dom";
 import {Formik, FormikProps, Form, Field, withFormik} from 'formik';
 import {Button} from 'semantic-ui-react';
 import Styled from 'styled-components';
@@ -25,26 +26,27 @@ const Transportation = (props) => {
 
     return (
         <div>
-            <Form className='transit-options'>
-                <h4>Method of Transportation</h4>
-                <label >
-                    <span class="checkmark"></span>
-                    <Field type="checkbox" name="car" checked={values.car}/>
-                    Car
-                </label>
-                <label >
-                    <span class="checkmark"></span>
-                    <Field type="checkbox" name="truck" checked={values.truck} />
-                    Truck
-                </label>
-                <label >
-                    <span class="checkmark"></span>
-                    <Field type="checkbox" name="other" checked={values.other} />
-                    Other
-                </label>
-                <button type='submit'>Next</button>
-            </Form>
-        </div>
+        <Form className='transit-options'>
+            <h4>Method of Transportation</h4>
+            <label >
+                <span class="checkmark"></span>
+                <Field type="checkbox" name="car" checked={values.car}/>
+                Car
+            </label>
+            <label >
+                <span class="checkmark"></span>
+                <Field type="checkbox" name="truck" checked={values.truck}/>
+                Truck
+            </label>
+            <label >
+                <span class="checkmark"></span>
+                <Field type="checkbox" name="other" checked={values.other}/>
+                Other
+            </label>
+            <NavLink to='/transportation/options'>
+            <button type='submit'>Next</button>
+                </NavLink>
+    </Form> < /div>
     )
 }
 
@@ -60,6 +62,7 @@ const formikHOC = withFormik({
         console.log('handleSubmit: then: res ', values);
         setStatus(values);
         resetForm();
+        
     }
 
 })(Transportation)

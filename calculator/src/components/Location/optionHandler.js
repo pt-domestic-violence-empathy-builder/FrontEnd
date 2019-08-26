@@ -3,13 +3,13 @@ import { Formik, FormikProps, Form, Field, withFormik } from 'formik';
 
 
 const OptionHandler = (props) => {
-    const {truck, car, other} = props;
+    const {transitData} = props;
     console.log('props',props);
     const [extraTransitCost, SetExtraTransitCost] = useState([]);
-    
+
     return(
         <div>
-
+            
         </div>
     )
 }

@@ -39,7 +39,7 @@ const Transportation = (props) => {
             <label >
                 <span class="checkmark"></span>
                 <Field type="checkbox" name="truck" checked={values.truck}/>
-                Truck
+                Truck Rental
             </label>
             <label >
                 <span class="checkmark"></span>

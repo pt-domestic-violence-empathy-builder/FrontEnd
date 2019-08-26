@@ -6,6 +6,7 @@ const OptionHandler = (props) => {
     const {truck, car, other} = props;
     console.log('props',props);
     const [extraTransitCost, SetExtraTransitCost] = useState([]);
+    
     return(
         <div>
 
@@ -19,6 +20,6 @@ const formikHOC = withFormik({
             size: size || ''
         };
     }
-})
+})(OptionHandler)
 
 export default formikHOC;

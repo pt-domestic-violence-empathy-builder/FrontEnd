@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import Axios from 'axios';
 
 const Transportation = (props) => {
-    const {touched, values, errors, status} = props;
+    const {touched, values, errors, status, onChange} = props;
     const [transitData,
         setTransitData] = useState([]);
 
@@ -20,6 +20,9 @@ const Transportation = (props) => {
                 ...transitData,
                 status
             ]);
+            onChange(status);
+            console.log(status);
+            props.history.push('/transportation/options')
         }
 
     }, [status])
@@ -43,10 +46,9 @@ const Transportation = (props) => {
                 <Field type="checkbox" name="other" checked={values.other}/>
                 Other
             </label>
-            <NavLink to='/transportation/options'>
             <button type='submit'>Next</button>
-                </NavLink>
-    </Form> < /div>
+    </Form> 
+    </div>
     )
 }
 
@@ -62,7 +64,6 @@ const formikHOC = withFormik({
         console.log('handleSubmit: then: res ', values);
         setStatus(values);
         resetForm();
-        
     }
 
 })(Transportation)

@@ -11,9 +11,7 @@ const Transportation = (props) => {
     const [transitData,
         setTransitData] = useState([]);
 
-    const [show,
-        setShow] = useState(true);
-
+  
     useEffect(() => {
         if (status) {
             setTransitData([
@@ -22,7 +20,7 @@ const Transportation = (props) => {
             ]);
             onChange(status);
             console.log(status);
-            props.history.push('/transportation/options')
+            props.history.push('/rentals')
         }
 
     }, [status])

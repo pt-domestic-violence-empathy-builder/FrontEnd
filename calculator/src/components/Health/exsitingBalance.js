@@ -6,7 +6,7 @@ import Styled from 'styled-components';
 import * as Yup from 'yup';
 import Axios from 'axios';
 
-const Transportation = (props) => {
+const Health = (props) => {
     const {touched, values, errors, status} = props;
     const [existingAcc,
         setExistingAcc] = useState([]);
@@ -25,9 +25,9 @@ const Transportation = (props) => {
 
     return (
         <div className='health-container'>
-            <h4>Do you have any existing medical insurace?</h4>
             <Form className='health-form'>
-                <Radio
+                <h4>Do you have any existing medical insurace?</h4>
+                <Radio 
                     name='currentHealthBills'
                     options={[
                     {
@@ -38,26 +38,31 @@ const Transportation = (props) => {
                         label: 'No'
                     }
                 ]}/>
-
+                <h4>
+                    If so, how much do you pay per month?
+                </h4>
+                <Field
+                    type='text'
+                    className='current-health-balance'
+                    name='medicalBill'
+                    placeholder='$'/>
+                    <button>Submit</button>
             </Form>
         </div>
     )
 }
-
 const formikHOC = withFormik({
-    mapToPropsValues({car, truck, other}) {
+    mapToPropsValues({currentHealthBills, medicalBill}) {
         return {
-            car: car || false,
-            truck: truck || false,
-            other: other || false
+            currentHealthBills: currentHealthBills || '',
+            medicalBill: medicalBill || ''
         };
     },
     handleSubmit(values, {setStatus, resetForm}) {
-        console.log('handleSubmit: then: res ', values);
+        console.log('handleSubmit: health: ', values);
         setStatus(values);
         resetForm();
     }
-
-})(Transportation)
+})(Health);
 
 export default formikHOC;

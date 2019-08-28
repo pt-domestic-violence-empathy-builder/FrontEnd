@@ -98,7 +98,6 @@ const formikHOC = withFormik({
                 .required("input required"),
             zipLocation: Yup
                 .number(),
-                
             cityDestination: Yup
                 .string()
                 .required("input required"),

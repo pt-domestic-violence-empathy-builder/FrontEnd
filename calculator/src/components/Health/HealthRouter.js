@@ -5,10 +5,8 @@ const HealthRouter = (props) => {
 
     const [totalHealthCost, getTotalHealthCost] = useState(0);
 
-    return (
-        <div>   
+    return (   
             <Route exact path='/health' component={(props) => (<ExistingBalance {...props} />) }/>
-        </div>
     )
 }
 

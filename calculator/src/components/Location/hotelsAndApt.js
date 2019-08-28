@@ -17,7 +17,7 @@ const OtherQuestions = (props) => {
                 ...rental,
                 status
             ]);
-            onChange(status);
+            onChange(status);  
         }
 
     }, [status])

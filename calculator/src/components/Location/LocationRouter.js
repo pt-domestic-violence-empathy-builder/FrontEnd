@@ -70,7 +70,7 @@ const LocationRouter = (props) => {
         if(isEmpty(movingOption) === false){
             console.log('total: ', getMovingTotal());
         }
-        console.log(`updated total`, getHotelTotal());
+        console.log(`relocation cost`, getHotelTotal());
         
     },[distance, movingOption, movingTotal, hotelTotal, aptTotal, rentals])
 

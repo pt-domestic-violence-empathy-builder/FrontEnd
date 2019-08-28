@@ -83,4 +83,4 @@ const LocationRouter = (props) => {
     )
 }
 
-export default LocationRouter
+export default LocationRouter;

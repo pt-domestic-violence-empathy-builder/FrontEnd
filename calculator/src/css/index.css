@@ -149,6 +149,7 @@ table {
   border: 3px outset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
+  min-width: 350px;
 }
 .moving-form .location-form {
   display: flex;
@@ -191,6 +192,7 @@ h4.destination-label {
   border: 3px outset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
+  min-width: 350px;
 }
 form.transit-options {
   display: flex;
@@ -237,6 +239,7 @@ form.transit-options label {
   border: 3px outset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
+  min-width: 350px;
 }
 form.other {
   display: flex;

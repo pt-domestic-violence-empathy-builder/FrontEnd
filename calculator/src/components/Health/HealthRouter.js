@@ -4,6 +4,7 @@ import ExistingBalance from './exsitingBalance';
 const HealthRouter = (props) => {
 
     const [totalHealthCost, getTotalHealthCost] = useState(0);
+    
 
     return (   
             <Route exact path='/health' component={(props) => (<ExistingBalance {...props} />) }/>

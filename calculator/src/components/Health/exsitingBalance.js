@@ -26,7 +26,7 @@ const Health = (props) => {
     return (
         <div className='health-container'>
             <Form className='health-form'>
-                <h4>Do you have any existing medical insurace?</h4>
+                <h4>Do you have any existing medical insurace/medical bills?</h4>
                 <Radio 
                     name='currentHealthBills'
                     options={[
@@ -46,16 +46,34 @@ const Health = (props) => {
                     className='current-health-balance'
                     name='medicalBill'
                     placeholder='$'/>
+
+                <h4>
+                    Aryou going to be applying for medical insurace?
+                </h4>
+                <Radio
+                    name='buyingInsurance'
+                    options={[
+                        {
+                            value: 'yes',
+                            label: 'Yes'
+                        }, {
+                            value: 'no',
+                            label: 'No'
+                        }
+                    ]} />
+
+
                     <button>Submit</button>
             </Form>
         </div>
     )
 }
 const formikHOC = withFormik({
-    mapToPropsValues({currentHealthBills, medicalBill}) {
+    mapToPropsValues({currentHealthBills, medicalBill, buyingInsurance}) {
         return {
             currentHealthBills: currentHealthBills || '',
-            medicalBill: medicalBill || ''
+            medicalBill: medicalBill || '',
+            buyingInsurance: buyingInsurance |'yes'
         };
     },
     handleSubmit(values, {setStatus, resetForm}) {

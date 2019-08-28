@@ -1,10 +1,15 @@
 import React from 'react';
 import './css/index.css'
 
+import FoodCosts from './FoodCosts.js';
+import MiscCat from './Misc.js';
+import NavBar from './NavBar.js';
 function App() {
   return (
     <div className="App">
-      hello0ooooooooooooooooooooooo
+      <NavBar/>
+      <FoodCosts/>
+      <MiscCat/>
       
     </div>
   );

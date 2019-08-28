@@ -1,3 +1,16 @@
+.transit-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    align-items: center;
+    height: 500px;
+    max-width: 600px;
+    border: 3px outset @primary-color;
+    box-shadow: 10px 10px 40px @secondary-color;
+    border-radius: .5rem;
+}
+
 form.transit-options {
     display: flex;
     flex-flow: column nowrap;
@@ -22,7 +35,7 @@ form.transit-options {
         color: rgb(99, 47, 141);
         font-weight: bold;
         width: 100%;
-        p{
+        p {
             width: 100%;
         }
         // &:hover{

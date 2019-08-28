@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import Axios from 'axios';
 
 const Health = (props) => {
-    const {touched, values, errors, status} = props;
+    const {touched, values, errors, status, onChange} = props;
     const [existingAcc,
         setExistingAcc] = useState([]);
 
@@ -17,7 +17,7 @@ const Health = (props) => {
                 ...existingAcc,
                 status
             ]);
-            console.log(status);
+            onChange(status);
             // props.history.push('/rentals')
         }
 
@@ -27,7 +27,7 @@ const Health = (props) => {
         <div className='health-container'>
             <Form className='health-form'>
                 <h4>Do you have any existing medical insurace/medical bills?</h4>
-                <Radio 
+                <Radio
                     name='currentHealthBills'
                     options={[
                     {
@@ -38,6 +38,7 @@ const Health = (props) => {
                         label: 'No'
                     }
                 ]}/>
+
                 <h4>
                     If so, how much do you pay per month?
                 </h4>
@@ -45,25 +46,25 @@ const Health = (props) => {
                     type='text'
                     className='current-health-balance'
                     name='medicalBill'
-                    placeholder='$'/>
-
+                    placeholder='$'/> {touched.medicalBill && errors.medicalBill && (
+                    <p>{errors.medicalBill}</p>
+                )}
                 <h4>
-                    Aryou going to be applying for medical insurace?
+                    Are you going to be applying for medical insurace?
                 </h4>
                 <Radio
                     name='buyingInsurance'
                     options={[
-                        {
-                            value: 'yes',
-                            label: 'Yes'
-                        }, {
-                            value: 'no',
-                            label: 'No'
-                        }
-                    ]} />
+                    {
+                        value: 'yes',
+                        label: 'Yes'
+                    }, {
+                        value: 'no',
+                        label: 'No'
+                    }
+                ]}/>
 
-
-                    <button>Submit</button>
+                <button type='submit'>Submit</button>
             </Form>
         </div>
     )
@@ -73,9 +74,20 @@ const formikHOC = withFormik({
         return {
             currentHealthBills: currentHealthBills || '',
             medicalBill: medicalBill || '',
-            buyingInsurance: buyingInsurance |'yes'
+            buyingInsurance: buyingInsurance | 'yes'
         };
     },
+    validationSchema: Yup
+        .object()
+        .shape({
+            currentHealthBills: Yup
+                .string()
+                .required("input required"),
+            medicalBill: Yup.number().typeError('must be a number'),
+            buyingInsurance: Yup
+                .string()
+                .required("input required")
+        }),
     handleSubmit(values, {setStatus, resetForm}) {
         console.log('handleSubmit: health: ', values);
         setStatus(values);

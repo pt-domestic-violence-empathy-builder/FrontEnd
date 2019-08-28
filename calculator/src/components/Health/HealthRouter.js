@@ -3,11 +3,32 @@ import {Router, Route, NavLink} from "react-router-dom";
 import ExistingBalance from './exsitingBalance';
 const HealthRouter = (props) => {
 
-    const [totalHealthCost, getTotalHealthCost] = useState(0);
+    const [userInput, setUserInput] = useState({})
+    const [totalHealthCost, setTotalHealthCost] = useState(0);
     
+    const getExistingBalance = (childData) => setUserInput(childData)
+
+    const balanceSum = () =>{
+        let sum = 0;
+    
+        if(userInput.currentHealthBills === 'yes'){
+            setTotalHealthCost(parseInt(userInput.medicalBill));
+        }
+
+        if(userInput.buyingInsurance === 'yes'){
+            sum = 440 //440 is the avg health cost in America
+        }
+
+        sum += parseInt(totalHealthCost)  
+        return sum;
+    }
+
+    useEffect(()=>{
+        console.log('total health cost: ', balanceSum());
+    },[userInput,totalHealthCost])
 
     return (   
-            <Route exact path='/health' component={(props) => (<ExistingBalance {...props} />) }/>
+            <Route exact path='/health' component={(props) => (<ExistingBalance {...props} onChange={getExistingBalance} />) }/>
     )
 }
 

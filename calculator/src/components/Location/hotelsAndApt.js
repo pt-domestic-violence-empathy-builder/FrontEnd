@@ -43,7 +43,7 @@ const OtherQuestions = (props) => {
             <option value='2'>2 Bed</option>
         </Field>
 
-        <button type='submit'>Next</button>
+        <button type='submit'>Submit</button>
     </Form> < /div>
     )
 

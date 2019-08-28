@@ -26,7 +26,7 @@ const Transportation = (props) => {
     }, [status])
 
     return (
-        <div>
+        <div className='transit-form'>
         <Form className='transit-options'>
             <h4>Method of Transportation</h4>
             <label >

@@ -8,7 +8,6 @@ const HealthRouter = (props) => {
     return (
         <div>   
             <Route exact path='/health' component={(props) => (<ExistingBalance {...props} />) }/>
-
         </div>
     )
 }

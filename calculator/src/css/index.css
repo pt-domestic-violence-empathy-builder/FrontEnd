@@ -145,6 +145,9 @@ table {
   margin: 10px auto;
   align-items: center;
   height: 500px;
+  max-width: 600px;
+  border: 3px outset #632f8d;
+  border-radius: 0.5rem;
 }
 .moving-form .location-form {
   display: flex;
@@ -158,7 +161,7 @@ table {
 }
 .moving-form button {
   border: 2px solid #632f8d;
-  padding: 10px;
+  padding: 10px 250px;
   border-radius: 0.5rem;
   background: white;
   font-size: 1rem;
@@ -174,6 +177,15 @@ h4.location-label {
 }
 h4.destination-label {
   font-size: 1.5rem;
+}
+.transit-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  align-items: center;
+  height: 500px;
+  max-width: 600px;
 }
 form.transit-options {
   display: flex;
@@ -208,6 +220,17 @@ form.transit-options label {
   font-family: 'Roboto', sans-serif;
   color: #632f8d;
   font-weight: bold;
+}
+.rent-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  align-items: center;
+  height: 500px;
+  max-width: 600px;
+  border: 3px outset #632f8d;
+  border-radius: 0.5rem;
 }
 form.other {
   display: flex;

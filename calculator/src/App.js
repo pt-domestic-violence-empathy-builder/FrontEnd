@@ -3,7 +3,7 @@ import './css/index.css';
 import Location from './components/Location/LocationRouter.js';
 import Health from './components/Health/HealthRouter.js';
 import Budget from './components/Budget/budgetRouter.js';
-import FoodRouter from './components/Food/foodCostRouter.js';
+import FoodRouter from './components/Food/foodCostRouter.js'./components/Budget/miscCosts/Misc.js
 
 // import MiscCat from './Misc.js';
 // import NavBar from './NavBar.js';

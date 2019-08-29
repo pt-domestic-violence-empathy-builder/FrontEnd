@@ -1,5 +1,8 @@
 import React from 'react';
-import './css/index.css'
+import './css/index.css';
+import Location from './components/Location/LocationRouter.js';
+import Health from './components/Health/HealthRouter.js'
+import Budget from './components/Budget/budgetRouter.js'
 
 import FoodCosts from './FoodCosts.js';
 import MiscCat from './Misc.js';
@@ -10,7 +13,10 @@ function App() {
       <NavBar/>
       <FoodCosts/>
       <MiscCat/>
-      
+      <Location />
+      <Health />
+      <Budget />
+
     </div>
   );
 }

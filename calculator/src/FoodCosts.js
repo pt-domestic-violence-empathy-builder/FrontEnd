@@ -1,19 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function FoodCosts(){
     const [foodCost, setFoodCost]=useState(0);
     console.log(foodCost);
 
-    const groceryClickHandler=event=>{
+    useEffect(()=>{},[])
+
+
+    const groceryClickHandler=(event)=>{
         console.log('grocery event', event.target.value);
+       
     }
 
     const monthlyFoodCost=event=>{
         console.log('month cost event', event.target.value);
+        
     }
 
     const numPeople=event=>{
         console.log('number of people', event.target.value);
+        return (event.target.value)
     }
 
     const handleSubmit=event=>{
@@ -47,7 +53,8 @@ export default function FoodCosts(){
                     onChange={numPeople}
                     />
 
-                <button onClick={()=>{setFoodCost(groceryClickHandler+monthlyFoodCost*numPeople)}}>Calculate Food Costs</button>
+                <button>Calculate Food Costs</button>
+
             </form>
         </div>
     )

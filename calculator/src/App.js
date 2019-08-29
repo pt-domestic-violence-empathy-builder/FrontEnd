@@ -10,7 +10,6 @@ function App() {
       <NavBar/>
       <FoodCosts/>
       <MiscCat/>
-      
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FoodCosts from './FoodCosts.js';
+import FoodCosts from './components/Budget/Food/FoodCosts.js/index.js';
 import MiscCat from './Misc.js'
 
 

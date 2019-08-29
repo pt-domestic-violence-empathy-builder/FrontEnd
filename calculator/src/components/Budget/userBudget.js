@@ -21,8 +21,10 @@ const UserBudget = (props) => {
             setBudget([
                 ...budget,
                 status
-            ])
+            ]);
             onChange(status);
+            props.history.push('/location');
+
         }
 
     }, [status])

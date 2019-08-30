@@ -96,9 +96,9 @@ function App() {
                 <Budget onChange={getBudgetCost}/>
             </FormContainer>
 
-            <RightView>
-                <h1>Start Planning</h1>
-            </RightView>
+            <div className='rightView'>
+                <h1>Start Planning.</h1>
+            </div>
 
             </Home> 
         </div>

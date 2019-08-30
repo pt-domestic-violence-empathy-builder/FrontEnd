@@ -368,3 +368,22 @@ form.other button {
   font-weight: bold;
   width: 100%;
 }
+.App {
+  margin: auto;
+  width: 940px;
+}
+.rightView {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 600px;
+  width: 50%;
+  background: #632f8d;
+  justify-content: center;
+}
+.rightView h1 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 4rem;
+  font-weight: bolder;
+}

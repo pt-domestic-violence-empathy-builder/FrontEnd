@@ -13,7 +13,7 @@ const BudgetRouter = (props) => {
     },[totalBudget])
 
     return(
-    <Route exact path='/' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
+    <Route exact path='/budget' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
     )
 }
 

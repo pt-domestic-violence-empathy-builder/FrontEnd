@@ -69,7 +69,7 @@ const LocationRouter = (props) => {
     }
 
     useEffect(() => {
-        let total = getHotelTotal()
+        let total = getHotelTotal();
 
         console.log('updated distance: ', distance);
         console.log('update moving options: ', movingOption);

@@ -18,6 +18,7 @@ const OtherQuestions = (props) => {
                 status
             ]);
             onChange(status);  
+            props.history.push('/health');
         }
 
     }, [status])

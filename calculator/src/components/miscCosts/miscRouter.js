@@ -25,7 +25,7 @@ const MiscRouter=()=>{
 
     useEffect(()=>{
         if(isEmpty(miscBudget)===false){
-            console.log('total:', miscTotal);
+            console.log('total:', miscTotal());
         }
     },[miscBudget])
 

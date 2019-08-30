@@ -57,6 +57,11 @@ const formikHOC = withFormik({
             cellPhone:cellPhone||''
 
         };
+    },
+
+    handleSubmit(values, {setStatus, resetForm}) {
+        console.log('handle submit: budget:', values);
+        setStatus(values);
     }
 })(MiscCosts)
 

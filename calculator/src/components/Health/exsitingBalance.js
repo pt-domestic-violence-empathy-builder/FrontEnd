@@ -18,7 +18,9 @@ const Health = (props) => {
                 status
             ]);
             onChange(status);
-            // props.history.push('/rentals')
+            props
+                .history
+                .push('/food');
         }
 
     }, [status])
@@ -83,7 +85,9 @@ const formikHOC = withFormik({
             currentHealthBills: Yup
                 .string()
                 .required("input required"),
-            medicalBill: Yup.number().typeError('must be a number'),
+            medicalBill: Yup
+                .number()
+                .typeError('must be a number'),
             buyingInsurance: Yup
                 .string()
                 .required("input required")

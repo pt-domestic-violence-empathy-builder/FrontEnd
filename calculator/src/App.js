@@ -8,8 +8,8 @@ import FoodRouter from './components/Food/foodCostRouter.js';
 import MiscCosts from './components/miscCosts/miscRouter.js';
 import {Button} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import Styled from 'styled-components'
-
+import {Nav, FormContainer, Home, RightView} from './components/styles.js';
+import Axios from 'axios';
 function App() {
 
     const [locationCost,
@@ -23,8 +23,8 @@ function App() {
     const [budgetCost,
         setBudgetCost] = useState(0);
 
-    const [sums,
-        setSums] = useState(0);
+    const [serverReady,
+        setServerReady] = useState(false);
 
     const getLocationCost = (childData) => setLocationCost(childData);
     const getFoodCost = (childData) => setFoodCost(childData);
@@ -38,6 +38,25 @@ function App() {
         console.log('user health cost: ', healthCost);
         console.log('user food cost: ', foodCost);
         console.log('user misc cost: ', miscCost);
+
+        // check if backend is ready
+        Axios.get('https://pt-dv-empathy-builder.herokuapp.com/')
+        .then(res => {
+            console.log('Is server ready: ', res.data.message)
+            setServerReady(true)
+        })
+        .catch(err => {
+            console.log('err: ',err)
+        })
+
+        if (budgetCost !== 0 && 
+            locationCost !== 0 &&
+             healthCost !== 0 &&
+              foodCost !== 0 &&
+               miscCost !== 0){
+                console.log(serverReady)
+               }
+
         return budgetCost - (locationCost + healthCost + foodCost + miscCost)
     }
 
@@ -46,36 +65,27 @@ function App() {
 
     }, [budgetCost, locationCost, healthCost, foodCost, miscCost])
 
-    const Nav = Styled.nav `
-  display:flex;
-  flex-flow: row wrap;
-  align-items:center;
-`
-    const FormContainer = Styled.div `
-  display:flex;
-  flex-flow: column;
-  align-items: center;
-  margin:20px auto;
-`
+
     return (
         <div className="App">
+            <Home>
             <FormContainer>
                 <Nav>
                     <NavLink to='/budget'>
-                        <Button content='budget' size='large' color='teal'/>
+                        <Button content='budget' size='small' color='teal'/>
                     </NavLink>
                     <NavLink to='/location'>
-                        <Button content='Location' size='large' color='purple'/>
+                        <Button content='Location' size='small' color='purple'/>
                     </NavLink>
                     <NavLink to='/health'>
-                        <Button content='Health' size='large' color='red'/>
+                        <Button content='Health' size='small' color='red'/>
                     </NavLink>
                     <NavLink to='/food'>
-                        <Button content='Food' size='large' color='blue'/>
+                        <Button content='Food' size='small' color='blue'/>
                     </NavLink>
 
                     <NavLink to='/misc'>
-                        <Button content='Misc' size='large' color='green'/>
+                        <Button content='Misc' size='medium' color='green'/>
                     </NavLink>
                 </Nav>
 
@@ -86,7 +96,13 @@ function App() {
                 <Budget onChange={getBudgetCost}/>
             </FormContainer>
 
+            <RightView>
+                <h1>Start Planning</h1>
+            </RightView>
+
+            </Home> 
         </div>
+
     );
 }
 

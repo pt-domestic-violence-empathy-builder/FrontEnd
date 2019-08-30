@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import Axios from 'axios';
 
 const Health = (props) => {
-    const {touched, values, errors, status, onChange} = props;
+    const {touched, values, errors, status, onChange,history} = props;
     const [existingAcc,
         setExistingAcc] = useState([]);
 
@@ -18,9 +18,7 @@ const Health = (props) => {
                 status
             ]);
             onChange(status);
-            props
-                .history
-                .push('/food');
+            history.push('/food');
         }
 
     }, [status])

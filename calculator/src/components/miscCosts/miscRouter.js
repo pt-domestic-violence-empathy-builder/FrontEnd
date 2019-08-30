@@ -16,7 +16,7 @@ const MiscRouter=()=>{
     }
 
     function miscTotal(){
-        return (put calculations here)
+        return parseInt(miscBudget.legalCosts)+parseInt(miscBudget.securityCosts)+parseInt(miscBudget.cellPhone)
     }
 
     function getMiscCost(childData){
@@ -30,7 +30,7 @@ const MiscRouter=()=>{
     },[miscBudget])
 
     return (
-        <Route exact path='/misc' component={(props)=>(<Misc {...props} onChange={getMiscCost}/>)}/>
+        <Route exact path='/misc' component={(props)=>(<MiscCosts {...props} onChange={getMiscCost}/>)}/>
     )
 }
 

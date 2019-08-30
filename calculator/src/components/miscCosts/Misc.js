@@ -29,20 +29,20 @@ function MiscCosts(props){
                     type='text'
                     name='legalCosts'
                     placeholder='Any expected Legal Costs'
-                    onChange={miscClickHandler}/>
+                    />
                     
                 <Field
                     type='text'
                     name='securityCosts'
                     placeholder='Any additional security measures'
-                    onChange={miscClickHandler}/>
+                    />
                 <Field
                     type='text'
                     name='cellPhone'
                     placeholder='Cost of a new Phone and/or number'
-                    onChange={miscClickHandler}/>
+                    />
 
-                <button>Calculate Miscellaneous Costs</button>
+                <button type='submit'>Calculate Miscellaneous Costs</button>
             </Form>
         </div>
     )

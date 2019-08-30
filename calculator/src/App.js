@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       {/* <NavBar/> */}
       <FoodRouter/>
-      <MiscCosts/>
+      <MiscCosts />
       <Location />
       <Health />
       <Budget />

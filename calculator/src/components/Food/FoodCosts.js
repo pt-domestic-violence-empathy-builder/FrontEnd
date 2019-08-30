@@ -19,6 +19,7 @@ import * as Yup from 'yup';
             setFoodCost([...foodCost,status]);
         }
         onChange(status);
+        props.history.push('/misc');
     },[status])
 
     

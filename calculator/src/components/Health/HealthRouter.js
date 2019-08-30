@@ -24,7 +24,10 @@ const HealthRouter = (props) => {
     }
 
     useEffect(()=>{
-        console.log('total health cost: ', balanceSum());
+        let hCost = balanceSum()
+        console.log('total health cost: ', hCost);
+        props.onChange(parseInt(hCost));
+
     },[userInput,totalHealthCost])
 
     return (   

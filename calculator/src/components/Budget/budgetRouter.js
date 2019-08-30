@@ -9,6 +9,7 @@ const BudgetRouter = (props) => {
 
     useEffect(()=>{
         console.log('User budget:', totalBudget.budget);
+        props.onChange(parseInt(totalBudget.budget))
     },[totalBudget])
 
     return(

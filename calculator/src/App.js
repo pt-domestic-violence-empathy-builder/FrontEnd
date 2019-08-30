@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React,{NavLink,useState, useEffect} from 'react';
 import './css/index.css';
 import Location from './components/Location/LocationRouter.js';
 import Health from './components/Health/HealthRouter.js';
@@ -6,7 +6,7 @@ import Budget from './components/Budget/budgetRouter.js';
 import FoodRouter from './components/Food/foodCostRouter.js';
 import MiscCosts from './components/miscCosts/miscRouter.js'
 
-// import NavBar from './NavBar.js';
+
 function App() {
 
   const [locationCost, setLocationCost] = useState(0);
@@ -39,12 +39,20 @@ function App() {
 
   return (
     <div className="App">
-      {/* <NavBar/> */}
-      <FoodRouter onChange={getFoodCost}/>
-      <MiscCosts onChange={getMiscCost}/>
-      <Location onChange={getLocationCost}/>
-      <Health onChange={getHealthCost}/>
-      <Budget onChange={getBudgetCost}/>
+      <div className='Navigation'>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/budget'>Budget</NavLink>
+        <NavLink to='/location'>Location</NavLink>
+        <NavLink to='/health'>Health</Navlink>
+        <NavLink to='/food'>Food</NavLink>
+        <NavLink to='/misc'>Miscellaneous</NavLink>
+      </div>
+      <FoodRouter/>
+      <MiscCosts />
+      <Location />
+      <Health />
+      <Budget />
+
     </div>
   );
 }

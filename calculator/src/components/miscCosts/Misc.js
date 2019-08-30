@@ -20,6 +20,7 @@ function MiscCosts(props){
             setMiscCost([...miscCost,status]);
         }
         onChange(status);
+       
     },[status])
 
     return(

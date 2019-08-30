@@ -3,7 +3,7 @@ import {Formik, FormikProps, Form, Field, withFormik} from 'formik';
 import {Route} from 'react-router-dom';
 import FoodCosts from './FoodCosts.js';
 
-const FoodRouter=()=>{
+const FoodRouter=(props)=>{
     const [foodBudget, setFoodBudget]=useState({});
     const [totalCost,setTotalCost]=useState(0);
 
@@ -29,7 +29,8 @@ const FoodRouter=()=>{
 
     useEffect(()=>{
         if(isEmpty(foodBudget) === false){
-            console.log('total: ', calculateTotal());
+            let total = calculateTotal()
+            props.onChange(parseInt(total));
         }
     },[foodBudget])
 

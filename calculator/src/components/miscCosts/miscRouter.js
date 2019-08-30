@@ -3,7 +3,7 @@ import {Formik, FormikProps, Form, Field, withFormik} from 'formik';
 import {Route} from 'react-router-dom';
 import MiscCosts from './Misc.js';
 
-const MiscRouter=()=>{
+const MiscRouter=(props)=>{
     const [miscBudget, setMiscBudget]=useState({});
     const [miscTotalCost, setMiscTotalCost]=useState(0);
 
@@ -25,7 +25,8 @@ const MiscRouter=()=>{
 
     useEffect(()=>{
         if(isEmpty(miscBudget)===false){
-            console.log('total:', miscTotal());
+            let total = miscTotal();
+            props.onChange(parseInt(total));
         }
     },[miscBudget])
 

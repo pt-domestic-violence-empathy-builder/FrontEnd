@@ -20,30 +20,38 @@ function MiscCosts(props) {
 
         if (status) {
             setMiscCost([...miscCost, status]);
+            onChange(status);
+            history.push('/completed');
         }
-        onChange(status);
+
 
     }, [status])
 
-    return (
-        <div className='misc-container'>
-            <Form className='misc-form'>
-                <h4 className='miscHeader'> Miscellaneous Costs </h4>
-                <Field className='misc-input'
-                    type='text'
-                    name='legalCosts'
-                    placeholder='$ Expected Legal Costs' />
-                <Field className='misc-input'
-                    type='text'
-                    name='securityCosts'
-                    placeholder='$ Security Measures' />
-                <Field className='misc-input'
-                    type='text'
-                    name='cellPhone'
-                    placeholder='$ New Phonenumber' />
-                <button type='submit' className='submitBtn'> Submit </button>
-            </Form>
-        </div>
+    return ( <
+        div className = 'misc-container' >
+        <
+        Form className = 'misc-form' >
+        <
+        h4 className = 'miscHeader' > Miscellaneous Costs < /h4> <
+        Field className = 'misc-input'
+        type = 'text'
+        name = 'legalCosts'
+        placeholder = '$ Expected Legal Costs' / >
+        <
+        Field className = 'misc-input'
+        type = 'text'
+        name = 'securityCosts'
+        placeholder = '$ Security Measures' / >
+        <
+        Field className = 'misc-input'
+        type = 'text'
+        name = 'cellPhone'
+        placeholder = '$ New Phonenumber' / >
+        <
+        button type = 'submit'
+        className = 'submitBtn' > Submit < /button> <
+        /Form> <
+        /div>
     )
 }
 

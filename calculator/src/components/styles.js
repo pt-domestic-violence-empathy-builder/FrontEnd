@@ -11,7 +11,7 @@ const Nav = Styled.nav `
 const FormContainer = Styled.div `
   display:flex;
   flex-flow: column;
-  width:50%;
+  width:52%;
 `
 
 const Home = Styled.div `

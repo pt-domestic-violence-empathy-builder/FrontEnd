@@ -13,15 +13,17 @@ import Axios from 'axios';
 function App() {
 
     const [locationCost,
-        setLocationCost] = useState(0);
+        setLocationCost] = useState(null);
     const [foodCost,
-        setFoodCost] = useState(0);
+        setFoodCost] = useState(null);
     const [miscCost,
-        setMiscCost] = useState(0);
+        setMiscCost] = useState(null);
     const [healthCost,
-        setHealthCost] = useState(0);
+        setHealthCost] = useState(null);
     const [budgetCost,
-        setBudgetCost] = useState(0);
+        setBudgetCost] = useState(null);
+    const [difference,
+        setDifference] = useState(null)
 
     const [serverReady,
         setServerReady] = useState(false);
@@ -38,69 +40,91 @@ function App() {
         console.log('user health cost: ', healthCost);
         console.log('user food cost: ', foodCost);
         console.log('user misc cost: ', miscCost);
+        
 
         // check if backend is ready
-        Axios.get('https://pt-dv-empathy-builder.herokuapp.com/')
-        .then(res => {
-            console.log('Is server ready: ', res.data.message)
-            setServerReady(true)
-        })
-        .catch(err => {
-            console.log('err: ',err)
-        })
+        Axios
+            .get('https://pt-dv-empathy-builder.herokuapp.com/')
+            .then(res => {
+                console.log('Is server ready: ', res.data.message)
+                setServerReady(true)
+            })
+            .catch(err => {
+                console.log('err: ', err)
+            })
 
-        if (budgetCost !== 0 && 
-            locationCost !== 0 &&
-             healthCost !== 0 &&
-              foodCost !== 0 &&
-               miscCost !== 0){
-                console.log(serverReady)
-               }
+            // check inputs before posting
+            // if (budgetCost !== null && locationCost !== null && healthCost !== null && foodCost !== null && miscCost !== null && serverReady === true) {
+            //     Axios
+            //         .post('https://pt-dv-empathy-builder.herokuapp.com/api/insert', {
+            //         budget_cost: budgetCost,
+            //         location_cost: locationCost,
+            //         health_cost: healthCost,
+            //         food_cost: foodCost,
+            //         misc_cost: miscCost,
+            //         difference: difference
+            //     })
+            //         .then((res) => {
+            //             console.log('update success', res);
+            //           setDifference(budgetCost - (locationCost + healthCost + foodCost + miscCost))
+            //         })
+            //         .catch((err) => {
+            //             console.log('update failed: ', err);
+            //         })
+            // }
 
-        return budgetCost - (locationCost + healthCost + foodCost + miscCost)
+            return difference;
     }
 
     useEffect(() => {
         console.log('difference of budget and relocation costs: ', calculateDiff());
 
-    }, [budgetCost, locationCost, healthCost, foodCost, miscCost])
-
+    }, [
+        budgetCost,
+        locationCost,
+        healthCost,
+        foodCost,
+        miscCost,
+        difference
+    ])
 
     return (
         <div className="App">
             <Home>
-            <FormContainer>
-                <Nav>
-                    <NavLink to='/budget'>
-                        <Button content='budget' size='small' color='teal'/>
-                    </NavLink>
-                    <NavLink to='/location'>
-                        <Button content='Location' size='small' color='purple'/>
-                    </NavLink>
-                    <NavLink to='/health'>
-                        <Button content='Health' size='small' color='red'/>
-                    </NavLink>
-                    <NavLink to='/food'>
-                        <Button content='Food' size='small' color='blue'/>
-                    </NavLink>
+                <FormContainer>
+                    <Nav>
+                        <NavLink to='/budget'>
+                            <Button content='budget' size='small' color='teal'/>
+                        </NavLink>
+                        <NavLink to='/location'>
+                            <Button content='Location' size='small' color='purple'/>
+                        </NavLink>
+                        <NavLink to='/health'>
+                            <Button content='Health' size='small' color='red'/>
+                        </NavLink>
+                        <NavLink to='/food'>
+                            <Button content='Food' size='small' color='blue'/>
+                        </NavLink>
 
-                    <NavLink to='/misc'>
-                        <Button content='Misc' size='medium' color='green'/>
-                    </NavLink>
-                </Nav>
+                        <NavLink to='/misc'>
+                            <Button content='Misc' size='medium' color='green'/>
+                        </NavLink>
+                    </Nav>
 
-                <FoodRouter onChange={getFoodCost}/>
-                <MiscCosts onChange={getMiscCost}/>
-                <Location onChange={getLocationCost}/>
-                <Health onChange={getHealthCost}/>
-                <Budget onChange={getBudgetCost}/>
-            </FormContainer>
+                    <FoodRouter onChange={getFoodCost}/>
+                    <MiscCosts onChange={getMiscCost}/>
+                    <Location onChange={getLocationCost}/>
+                    <Health onChange={getHealthCost}/>
+                    <Budget onChange={getBudgetCost}/>
+                </FormContainer>
 
-            <div className='rightView'>
-                <h1>Start Planning.</h1>
-            </div>
+                <div className='rightView'>
+                    <h1>Start Planning.</h1>
+                    
 
-            </Home> 
+                </div>
+
+            </Home>
         </div>
 
     );

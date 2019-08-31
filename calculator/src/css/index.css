@@ -328,7 +328,7 @@ form.other button {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 10px auto 0px;
   align-items: center;
   height: 500px;
   max-width: 600px;
@@ -369,17 +369,18 @@ form.other button {
   width: 100%;
 }
 .App {
-  margin: auto;
+  margin: 20px auto;
   width: 940px;
 }
 .rightView {
   display: flex;
   flex-flow: column;
   align-items: center;
-  height: 600px;
+  height: 548px;
   width: 50%;
-  background: #632f8d;
+  background: teal;
   justify-content: center;
+  border-radius: 0.5rem;
 }
 .rightView h1 {
   font-family: 'Roboto', sans-serif;

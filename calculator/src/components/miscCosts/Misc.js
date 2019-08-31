@@ -26,36 +26,29 @@ function MiscCosts(props){
     },[status])
 
     return(
-        <div>
-            <Form>
-                <div className='miscCosts'>
-                    <h4 className='miscHeader'>Miscellaneous Costs</h4>
-                        <div className='miscForm'>
+        <div className='misc-container'>
+            <Form className='misc-form'>
+                < h4 className = 'miscHeader'> Miscellaneous Costs </h4>
                 <Field
+                    className='misc-input'
                     type='text'
-                    className='legalCosts'
                     name='legalCosts'
                     placeholder='$ Expected Legal Costs'
                 />
-                
                 <Field
+                    className='misc-input'
                     type='text'
-                    className='securityCosts'
                     name='securityCosts'
                     placeholder='$ Security Measures'
                 />
                 <Field
+                    className='misc-input'
                     type='text'
-                    className='cellPhone'
                     name='cellPhone'
                     placeholder='$ New Phonenumber'
                 />
-
                 <button type='submit' className='submitBtn'>Calculate Miscellaneous Costs</button>
-                </div>
-                </div>
             </Form>
-            
         </div>
     )
 }

@@ -96,11 +96,11 @@ const LocationRouter = (props) => {
                 component={(props) => (<Destination {...props} onChange={getLocationData}/>)}/>
             <Route
                 exact
-                path='/transportation'
+                path='/location/transportation'
                 component={(props) => (<Transportation {...props} onChange={getMovingData}/>)}/>
             <Route
                 exact
-                path='/rentals'
+                path='/location/rentals'
                 component={(props) => (<Rentals {...props} onChange={getRentalData}/>)}/>
         </div>
     )

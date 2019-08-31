@@ -17,9 +17,10 @@ import * as Yup from 'yup';
     useEffect(()=>{
         if (status){
             setFoodCost([...foodCost,status]);
+            onChange(status);
+            history.push('/misc');
         }
-        onChange(status);
-        props.history.push('/misc');
+        
     },[status])
 
     

@@ -149,6 +149,7 @@ table {
   border: 3px outset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
+  min-width: 350px;
 }
 .moving-form .location-form {
   display: flex;
@@ -327,7 +328,7 @@ form.other button {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 10px auto 0px;
   align-items: center;
   height: 500px;
   max-width: 600px;
@@ -366,4 +367,24 @@ form.other button {
   color: #632f8d;
   font-weight: bold;
   width: 100%;
+}
+.App {
+  margin: 20px auto;
+  width: 940px;
+}
+.rightView {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 548px;
+  width: 50%;
+  background: teal;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.rightView h1 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 4rem;
+  font-weight: bolder;
 }

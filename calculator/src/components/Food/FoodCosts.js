@@ -47,7 +47,7 @@ function FoodCost(props) {
                 className='numberOfPeople'
                 name='numberOfPeople'
                 placeholder='$ Number of People to feed'/>
-            <button type='submit' className='submitBtn'>Calculate Food Costs</button>
+            <button type='submit' className='submitBtn'>Next</button>
         </Form> 
     </div>
     )

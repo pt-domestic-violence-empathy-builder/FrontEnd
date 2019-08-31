@@ -64,7 +64,7 @@ const Health = (props) => {
                     }
                 ]}/>
 
-                <button type='submit'>Submit</button>
+                <button type='submit'>Next</button>
             </Form>
         </div>
     )

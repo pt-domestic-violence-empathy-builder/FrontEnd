@@ -22,12 +22,12 @@ const DestinationForm = ({errors, touched, values, status, onChange, history}) =
             Axios
                 .get(`http://www.mapquestapi.com/directions/v2/route?key=OfzYfK9PAfamGLyOdiLWOfD8a35UTDYc&from=${status.cityLocation},${status.zipLocation}&to=${status.cityDestination},${status.zipDestination}`)
                 .then(res => {
-                    console.log('Api succes: distance', res.data);
+                    // console.log('Api succes: distance', res.data);
                     setDistance(res.data.route.distance);
                     onChange(res.data.route)
                 })
                 .catch(err => {
-                    console.log('err', err);
+                    // console.log('err', err);
                 })
 
             history.push('/location/transportation')
@@ -106,7 +106,7 @@ const formikHOC = withFormik({
                 
         }),
     handleSubmit(values, {setStatus, resetForm}) {
-        console.log("handleSubmit: then: res: ", values);
+        // console.log("handleSubmit: then: res: ", values);
         setStatus(values);
         resetForm();
 

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Form, Field, withFormik} from 'formik';
+import Styled from 'styled-components';
 
 import * as Yup from 'yup';
 
@@ -27,29 +28,37 @@ import * as Yup from 'yup';
 
     return(
         <div>
-            <Form>
-                <Field
-                    type='text'
-                    name='FeedCost'
-                    placeholder='Intital Grocery Cost'
-                    />
+            
+                    <Form>
+                    <div className='foodCosts'>
+                        <h4 className='foodHeader'>Food Costs</h4>
+                        <div className='foodForm'>
+                        <Field
+                            type='text'
+                            className='FeedCost'
+                            name='FeedCost'
+                            placeholder='$ Intital Grocery Cost'
+                            />
 
-                <Field
-                    type='text'
-                    name='monthlyFoodCost'
-                    placeholder='Monthly Food Cost'
-                    />
+                        <Field
+                            type='text'
+                            className='monthlyFoodCost'
+                            name='monthlyFoodCost'
+                            placeholder='$ Monthly Food Cost'
+                            />
 
-                <Field
-                    type='text'
-                    name='numberOfPeople'
-                    placeholder='Number of People to feed'
-                    />
+                        <Field
+                            type='text'
+                            className='numberOfPeople'
+                            name='numberOfPeople'
+                            placeholder='$ Number of People to feed'
+                            />
 
-                <button type='submit'>Calculate Food Costs</button>
-
-            </Form>
-        </div>
+                        <button type='submit' className='submitBtn'>Calculate Food Costs</button>
+                        </div>
+                        </div>
+                    </Form>
+                    </div>
     )
 }
 

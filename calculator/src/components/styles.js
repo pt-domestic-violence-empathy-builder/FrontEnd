@@ -19,6 +19,10 @@ const Home = Styled.div `
     flex-flow:row no-wrap;
     justify-content:space-between;
     margin:20px 20px;
+
+    @media (max-width:600px) {
+      flex-flow: column;
+    }
 `
 
 const RightView = Styled.div `
@@ -36,8 +40,8 @@ const RightView = Styled.div `
 
 
 export {
-  Nav,
-  FormContainer,
-  Home,
-  RightView
+    Nav,
+    FormContainer,
+    Home,
+    RightView
 };

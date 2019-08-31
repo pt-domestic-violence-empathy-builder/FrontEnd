@@ -145,7 +145,7 @@ function App() {
                     <Location onChange={getLocationCost}/>
                     <Health onChange={getHealthCost}/>
                     <Budget onChange={getBudgetCost}/>
-                    <Route excact path='/completed' component={(props) => (<Submitted {...props} isSubmitted={difference} />)} />>
+                    <Route excact path='/completed' component={(props) => (<Submitted {...props} isSubmitted={difference} />)} />
                 </FormContainer>
 
                 <div className='rightView'>

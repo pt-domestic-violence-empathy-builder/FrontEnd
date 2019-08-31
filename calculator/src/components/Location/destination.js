@@ -20,7 +20,7 @@ const DestinationForm = ({errors, touched, values, status, onChange, history}) =
             ]);
 
             Axios
-                .get(`http://www.mapquestapi.com/directions/v2/route?key=OfzYfK9PAfamGLyOdiLWOfD8a35UTDYc&from=${status.cityLocation},${status.zipLocation}&to=${status.cityDestination},${status.zipDestination}`)
+                .get(`https://www.mapquestapi.com/directions/v2/route?key=OfzYfK9PAfamGLyOdiLWOfD8a35UTDYc&from=${status.cityLocation},${status.zipLocation}&to=${status.cityDestination},${status.zipDestination}`)
                 .then(res => {
                     // console.log('Api succes: distance', res.data);
                     setDistance(res.data.route.distance);

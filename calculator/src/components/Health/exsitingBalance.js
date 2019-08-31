@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import Axios from 'axios';
 
 const Health = (props) => {
-    const {touched, values, errors, status, onChange} = props;
+    const {touched, values, errors, status, onChange,history} = props;
     const [existingAcc,
         setExistingAcc] = useState([]);
 
@@ -18,7 +18,7 @@ const Health = (props) => {
                 status
             ]);
             onChange(status);
-            // props.history.push('/rentals')
+            history.push('/food');
         }
 
     }, [status])
@@ -83,7 +83,9 @@ const formikHOC = withFormik({
             currentHealthBills: Yup
                 .string()
                 .required("input required"),
-            medicalBill: Yup.number().typeError('must be a number'),
+            medicalBill: Yup
+                .number()
+                .typeError('must be a number'),
             buyingInsurance: Yup
                 .string()
                 .required("input required")

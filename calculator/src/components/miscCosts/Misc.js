@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Field, withFormik} from 'formik';
+import Styled from 'styled-components';
 
 import * as Yup from 'yup';
 
@@ -26,29 +27,35 @@ function MiscCosts(props){
 
     return(
         <div>
-            <div className='miscCosts'>
-            <h4>Miscellaneous Costs</h4>
             <Form>
+                <div className='miscCosts'>
+                    <h4 className='miscHeader'>Miscellaneous Costs</h4>
+                        <div className='miscForm'>
                 <Field
                     type='text'
+                    className='legalCosts'
                     name='legalCosts'
-                    placeholder='Any expected Legal Costs'
-                    />
-                    
+                    placeholder='$ Expected Legal Costs'
+                />
+                
                 <Field
                     type='text'
+                    className='securityCosts'
                     name='securityCosts'
-                    placeholder='Any additional security measures'
-                    />
+                    placeholder='$ Security Measures'
+                />
                 <Field
                     type='text'
+                    className='cellPhone'
                     name='cellPhone'
-                    placeholder='Cost of a new Phone and/or number'
-                    />
+                    placeholder='$ New Phonenumber'
+                />
 
-                <button type='submit'>Calculate Miscellaneous Costs</button>
+                <button type='submit' className='submitBtn'>Calculate Miscellaneous Costs</button>
+                </div>
+                </div>
             </Form>
-            </div>
+            
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Form, Field, withFormik} from 'formik';
+import Styled from 'styled-components';
 
 import * as Yup from 'yup';
 
@@ -17,41 +18,47 @@ import * as Yup from 'yup';
     useEffect(()=>{
         if (status){
             setFoodCost([...foodCost,status]);
+            onChange(status);
+            history.push('/misc');
         }
-        onChange(status);
-        props.history.push('/misc');
+        
     },[status])
 
     
 
     return(
         <div>
-            <div className='foodCosts'>
-                <h4>Food Costs</h4>
+            
                     <Form>
+                    <div className='foodCosts'>
+                        <h4 className='foodHeader'>Food Costs</h4>
+                        <div className='foodForm'>
                         <Field
                             type='text'
+                            className='FeedCost'
                             name='FeedCost'
-                            placeholder='Intital Grocery Cost'
+                            placeholder='$ Intital Grocery Cost'
                             />
 
                         <Field
                             type='text'
+                            className='monthlyFoodCost'
                             name='monthlyFoodCost'
-                            placeholder='Monthly Food Cost'
+                            placeholder='$ Monthly Food Cost'
                             />
 
                         <Field
                             type='text'
+                            className='numberOfPeople'
                             name='numberOfPeople'
-                            placeholder='Number of People to feed'
+                            placeholder='$ Number of People to feed'
                             />
 
-                        <button type='submit'>Calculate Food Costs</button>
-
+                        <button type='submit' className='submitBtn'>Calculate Food Costs</button>
+                        </div>
+                        </div>
                     </Form>
-            </div>
-        </div>
+                    </div>
     )
 }
 

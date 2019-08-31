@@ -9,10 +9,11 @@ const BudgetRouter = (props) => {
 
     useEffect(()=>{
         console.log('User budget:', totalBudget.budget);
+        props.onChange(parseInt(totalBudget.budget))
     },[totalBudget])
 
     return(
-    <Route exact path='/' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
+    <Route exact path='/budget' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
     )
 }
 

@@ -30,7 +30,7 @@ const DestinationForm = ({errors, touched, values, status, onChange, history}) =
                     console.log('err', err);
                 })
 
-            history.push('/transportation')
+            history.push('/location/transportation')
         }
         
 

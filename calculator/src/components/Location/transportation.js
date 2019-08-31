@@ -20,7 +20,7 @@ const Transportation = (props) => {
             ]);
             onChange(status);
             console.log(status);
-            props.history.push('/rentals')
+            props.history.push('/location/rentals')
         }
 
     }, [status])

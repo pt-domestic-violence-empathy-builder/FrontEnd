@@ -23,7 +23,9 @@ const OtherQuestions = (props) => {
 
     }, [status])
 
-    return ( < div className = 'rent-form' > <Form className='other'>
+    return ( 
+    <div className = 'rent-form' > 
+    <Form className='other'>
         <h4>Are you going to stay at a hotel?</h4>
         <Radio
             name='hotel'
@@ -59,7 +61,7 @@ const formikHOC = withFormik({
         };
     },
     handleSubmit(values, {setStatus, resetForm}) {
-        console.log('handleSubmit:', values);
+        // console.log('handleSubmit:', values);
         setStatus(values);
         resetForm();
     }

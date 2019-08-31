@@ -34,7 +34,7 @@ const UserBudget = (props) => {
             <Form>
                 <h4>Let's get started.What is your budget?</h4>
                 <Field type='input' className='budget-input' name='budget' placeholder='$'/>
-                <button type='submit'>Submit</button>
+                <button type='submit'>Next</button>
             </Form>
         </div>
     )

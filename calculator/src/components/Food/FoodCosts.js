@@ -4,8 +4,8 @@ import Styled from 'styled-components';
 
 import * as Yup from 'yup';
 
- function FoodCost(props){
-    const{
+function FoodCost(props) {
+    const {
         errors,
         touched,
         values,
@@ -13,60 +13,51 @@ import * as Yup from 'yup';
         onChange,
         history
     } = props
-    const [foodCost,setFoodCost]=useState([])
+    const [foodCost,
+        setFoodCost] = useState([])
 
-    useEffect(()=>{
-        if (status){
-            setFoodCost([...foodCost,status]);
+    useEffect(() => {
+        if (status) {
+            setFoodCost([
+                ...foodCost,
+                status
+            ]);
             onChange(status);
             history.push('/misc');
         }
-        
-    },[status])
 
-    
+    }, [status])
 
-    return(
-        <div>
-            
-                    <Form>
-                    <div className='foodCosts'>
-                        <h4 className='foodHeader'>Food Costs</h4>
-                        <div className='foodForm'>
-                        <Field
-                            type='text'
-                            className='FeedCost'
-                            name='FeedCost'
-                            placeholder='$ Intital Grocery Cost'
-                            />
-
-                        <Field
-                            type='text'
-                            className='monthlyFoodCost'
-                            name='monthlyFoodCost'
-                            placeholder='$ Monthly Food Cost'
-                            />
-
-                        <Field
-                            type='text'
-                            className='numberOfPeople'
-                            name='numberOfPeople'
-                            placeholder='$ Number of People to feed'
-                            />
-
-                        <button type='submit' className='submitBtn'>Calculate Food Costs</button>
-                        </div>
-                        </div>
-                    </Form>
-                    </div>
+    return ( 
+    <div className = 'food-container'> 
+        <Form className='food-form'>
+            <h4 className='foodHeader'>Food Costs</h4>
+            <Field
+                type='text'
+                className='FeedCost'
+                name='FeedCost'
+                placeholder='$ Intital Grocery Cost'/>
+            <Field
+                type='text'
+                className='monthlyFoodCost'
+                name='monthlyFoodCost'
+                placeholder='$ Monthly Food Cost'/>
+            <Field
+                type='text'
+                className='numberOfPeople'
+                name='numberOfPeople'
+                placeholder='$ Number of People to feed'/>
+            <button type='submit' className='submitBtn'>Next</button>
+        </Form> 
+    </div>
     )
 }
 
 const formikHOC = withFormik({
-    mapToPropsValues({FeedCost,monthlyFoodCost,numberOfPeople}) {
+    mapToPropsValues({FeedCost, monthlyFoodCost, numberOfPeople}) {
         return {
-            FeedCost: FeedCost ||'',
-            monthlyFoodCost: monthlyFoodCost ||'',
+            FeedCost: FeedCost || '',
+            monthlyFoodCost: monthlyFoodCost || '',
             numberOfPeople: numberOfPeople || ''
         };
     },
@@ -75,6 +66,5 @@ const formikHOC = withFormik({
         setStatus(values);
     }
 })(FoodCost)
-
 
 export default formikHOC;

@@ -5,20 +5,29 @@ import Location from './components/Location/LocationRouter.js';
 import Health from './components/Health/HealthRouter.js';
 import Budget from './components/Budget/budgetRouter.js';
 import FoodRouter from './components/Food/foodCostRouter.js';
-import MiscCosts from './components/MiscCosts/miscRouter.js';
 import {Button} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import {Nav, FormContainer, Home, RightView} from './components/styles.js';
+import MiscCosts from './components/miscCosts/miscRouter.js'
 import Axios from 'axios';
 
-const Views = ({budgetCost, locationCost, healthCost, foodCost, miscCost, difference}) => {
-  if (budgetCost !== null && locationCost !== null && healthCost !== null && foodCost !== null && miscCost !== null){
-    return (
-      <h4>Difference between your budget and relocation cost: {difference}</h4>
-    )
-  } else {
-    return <h1>Start Planning</h1>
-  }
+const Views = ({
+    budgetCost,
+    locationCost,
+    healthCost,
+    foodCost,
+    miscCost,
+    difference
+}) => {
+
+
+    if (budgetCost !== null && locationCost !== null && healthCost !== null && foodCost !== null && miscCost !== null) {
+        return (
+            <h4>Remaining Balance: {difference}</h4>
+        )
+    } else {
+        return <h1>Start Planning.</h1>
+    }
 }
 
 function App() {
@@ -46,34 +55,51 @@ function App() {
     const getBudgetCost = (childData) => setBudgetCost(childData);
 
     const calculateDiff = () => {
-        console.log('user Budget: ', budgetCost);
-        console.log('user location cost: ', locationCost);
-        console.log('user health cost: ', healthCost);
-        console.log('user food cost: ', foodCost);
-        console.log('user misc cost: ', miscCost);
+        // console.log('user Budget: ', budgetCost);
+        // console.log('user location cost: ', locationCost);
+        // console.log('user health cost: ', healthCost);
+        // console.log('user food cost: ', foodCost);
+        // console.log('user misc cost: ', miscCost);
         setDifference(budgetCost - (locationCost + healthCost + foodCost + miscCost))
-      
+
         // check if backend is ready
-        Axios.get('https://pt-dv-empathy-builder.herokuapp.com/')
+        Axios
+            .get('https://pt-dv-empathy-builder.herokuapp.com/')
             .then(res => {
-                console.log('Is server ready: ', res.data.message)
+                // console.log('Is server ready: ', res.data.message)
                 setServerReady(true)
             })
             .catch(err => {
                 console.log('err: ', err)
             })
 
-            // check inputs before posting if (budgetCost !== null && locationCost !== null
-            // && healthCost !== null && foodCost !== null && miscCost !== null &&
-            // serverReady === true) {     Axios
-            // .post('https://pt-dv-empathy-builder.herokuapp.com/api/insert', {
-            // budget_cost: budgetCost,         location_cost: locationCost,
-            // health_cost: healthCost,         food_cost: foodCost,         misc_cost:
-            // miscCost,         difference: difference     })         .then((res) => {
-            //        console.log('update success', res);           setDifference(budgetCost
-            // - (locationCost + healthCost + foodCost + miscCost))         })
-            // .catch((err) => {             console.log('update failed: ', err);         })
-            // }
+            // check inputs before posting
+            if (budgetCost !== null && 
+                locationCost !== null && 
+                healthCost !== null && 
+                foodCost !== null && 
+                miscCost !== null && 
+                serverReady === true) {
+                Axios
+                    .post('https://pt-dv-empathy-builder.herokuapp.com/api/insert', {
+                    budget_cost: budgetCost,
+                    location_cost: locationCost,
+                    health_cost: healthCost,
+                    food_cost: foodCost,
+                    misc_cost: miscCost,
+                    difference: difference
+                })
+                    .then((res) => {
+                        // console.log('update success', res);
+                        setDifference(budgetCost - (locationCost + healthCost + foodCost + miscCost))
+                    })
+                    .catch((err) => {
+                        // console.log('update failed: ', err);
+                    })
+            }
+            else{
+                console.log('update failed');
+            }
 
             return difference;
     }
@@ -121,13 +147,13 @@ function App() {
                 </FormContainer>
 
                 <div className='rightView'>
-                  <Views 
-                    budgetCost={budgetCost} 
-                    locationCost={locationCost}
-                    miscCost={miscCost}
-                    healthCost={healthCost}
-                    foodCost={foodCost} 
-                    difference={difference} />
+                    <Views
+                        budgetCost={budgetCost}
+                        locationCost={locationCost}
+                        miscCost={miscCost}
+                        healthCost={healthCost}
+                        foodCost={foodCost}
+                        difference={difference}/>
                 </div>
 
             </Home>

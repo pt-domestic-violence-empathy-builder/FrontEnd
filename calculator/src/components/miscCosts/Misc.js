@@ -16,6 +16,7 @@ function MiscCosts(props){
     const [miscCost, setMiscCost]=useState([]);
 
     useEffect(()=>{
+
         if(status){
             setMiscCost([...miscCost,status]);
         }
@@ -25,6 +26,8 @@ function MiscCosts(props){
 
     return(
         <div>
+            <div className='miscCosts'>
+            <h4>Miscellaneous Costs</h4>
             <Form>
                 <Field
                     type='text'
@@ -45,6 +48,7 @@ function MiscCosts(props){
 
                 <button type='submit'>Calculate Miscellaneous Costs</button>
             </Form>
+            </div>
         </div>
     )
 }

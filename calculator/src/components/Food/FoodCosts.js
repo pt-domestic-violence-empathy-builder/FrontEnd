@@ -26,28 +26,31 @@ import * as Yup from 'yup';
 
     return(
         <div>
-            <Form>
-                <Field
-                    type='text'
-                    name='FeedCost'
-                    placeholder='Intital Grocery Cost'
-                    />
+            <div className='foodCosts'>
+                <h4>Food Costs</h4>
+                    <Form>
+                        <Field
+                            type='text'
+                            name='FeedCost'
+                            placeholder='Intital Grocery Cost'
+                            />
 
-                <Field
-                    type='text'
-                    name='monthlyFoodCost'
-                    placeholder='Monthly Food Cost'
-                    />
+                        <Field
+                            type='text'
+                            name='monthlyFoodCost'
+                            placeholder='Monthly Food Cost'
+                            />
 
-                <Field
-                    type='text'
-                    name='numberOfPeople'
-                    placeholder='Number of People to feed'
-                    />
+                        <Field
+                            type='text'
+                            name='numberOfPeople'
+                            placeholder='Number of People to feed'
+                            />
 
-                <button type='submit'>Calculate Food Costs</button>
+                        <button type='submit'>Calculate Food Costs</button>
 
-            </Form>
+                    </Form>
+            </div>
         </div>
     )
 }

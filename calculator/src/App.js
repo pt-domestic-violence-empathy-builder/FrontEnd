@@ -135,7 +135,7 @@ function App() {
                         </NavLink>
 
                         <NavLink to='/misc'>
-                            <Button content='Misc' size='medium' color='green'/>
+                            <Button content='Misc' size='small' color='green'/>
                         </NavLink>
                     </Nav>
 

@@ -388,3 +388,10 @@ form.other button {
   font-size: 4rem;
   font-weight: bolder;
 }
+.rightView h4 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 4rem;
+  font-weight: bolder;
+  text-align: center;
+}

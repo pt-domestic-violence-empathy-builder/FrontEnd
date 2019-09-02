@@ -392,6 +392,12 @@ form.other button {
   margin: 20px auto;
   width: 940px;
 }
+@media (max-width: 600px) {
+  .App {
+    margin: 20px auto;
+    width: 100%;
+  }
+}
 .rightView {
   display: flex;
   flex-flow: column;
@@ -404,9 +410,7 @@ form.other button {
 }
 @media (max-width: 600px) {
   .rightView {
-    margin-top: 20px;
-    width: 44%;
-    margin-left: 35px;
+    width: 100%;
   }
 }
 .rightView h1 {

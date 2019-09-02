@@ -7,11 +7,19 @@ const Nav = Styled.nav `
   flex-flow: row wrap;
   align-items:center;
   margin: auto;
+    @media(max-width:600px) {
+    margin: 0px -20px 0px -13px;
+    }
 `
 const FormContainer = Styled.div `
   display:flex;
   flex-flow: column;
   width:52%;
+  @media(max-width:600px) {
+    margin: 20px auto;
+    width: 100% ;
+  }
+      
 `
 
 const Home = Styled.div `

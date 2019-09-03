@@ -7,10 +7,11 @@ import Budget from './components/Budget/budgetRouter.js';
 import FoodRouter from './components/Food/foodCostRouter.js';
 import { Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Nav, FormContainer, Home } from './components/styles.js';
+import { Nav, FormContainer, Home, RightView, FindTab } from './components/styles.js';
 import MiscCosts from './components/miscCosts/miscRouter.js'
 import Submitted from './components/Completed/submitted.js'
-import RightView from './components/Views/rightView.js'
+import FindShelter from './components/Find/findShelter.js'
+
 import Axios from 'axios';
 
 
@@ -120,7 +121,11 @@ function App(props) {
                     foodCost={foodCost}
                     difference={difference} />
 
+
             </Home>
+            <FindTab>
+                <FindShelter />
+            </FindTab>
         </div>
 
     );

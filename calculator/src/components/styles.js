@@ -1,8 +1,9 @@
 import Styled from 'styled-components';
 
 const primary = 'rgb(99, 47, 141)';
-
-const Nav = Styled.nav `
+const maxContainerWidth = '940px';
+const mainFont = `'Roboto', sans-serif`;
+const Nav = Styled.nav`
   display:flex;
   flex-flow: row wrap;
   align-items:center;
@@ -11,7 +12,7 @@ const Nav = Styled.nav `
     margin: 0px -20px 0px -13px;
     }
 `
-const FormContainer = Styled.div `
+const FormContainer = Styled.div`
   display:flex;
   flex-flow: column;
   width:52%;
@@ -22,7 +23,7 @@ const FormContainer = Styled.div `
       
 `
 
-const Home = Styled.div `
+const Home = Styled.div`
     display:flex;
     flex-flow:row no-wrap;
     justify-content:space-between;
@@ -33,7 +34,7 @@ const Home = Styled.div `
     }
 `
 
-const RightView = Styled.div `
+const RightView = Styled.div`
   display:flex;
   flex-flow:column;
   align-items:center;
@@ -46,10 +47,25 @@ const RightView = Styled.div `
   }
 `
 
+const FindTab = Styled.div`
+  width:100%;
+  max-width: 900px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: ${mainFont};
+  background: ${primary};
+  border-radius:.5rem;
+  color: white;
+  height: 300px;
+  margin: auto 19px;
+`
+
 
 export {
-    Nav,
-    FormContainer,
-    Home,
-    RightView
+  Nav,
+  FormContainer,
+  Home,
+  RightView,
+  FindTab
 };

@@ -7,7 +7,7 @@ const Nav = Styled.nav`
   display:flex;
   flex-flow: row wrap;
   align-items:center;
-  margin: auto;
+  margin: auto 20px;
     @media(max-width:600px) {
     margin: 0px -20px 0px -13px;
     }
@@ -57,8 +57,22 @@ const FindTab = Styled.div`
   background: ${primary};
   border-radius:.5rem;
   color: white;
-  height: 300px;
+  height: 200px;
   margin: auto 19px;
+  transition:0.5s;
+  &:hover{
+    cursor:pointer;
+    background: white;
+    color:${primary};
+    border: 2px solid ${primary};
+    opacity:0.8;
+  }
+
+  .find-tab{
+    h1{
+      font-size:4rem;
+    }
+  }
 `
 
 

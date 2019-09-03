@@ -46,7 +46,6 @@ const RightView = Styled.div`
     coloer:white;
   }
 `
-
 const FindTab = Styled.div`
   width:100%;
   max-width: 900px;
@@ -73,6 +72,13 @@ const FindTab = Styled.div`
       font-size:4rem;
     }
   }
+
+const Cost = Styled.div `
+  font-size:2rem;
+  color: white
+  font-family: ${primaryFont}
+  font-weight: bolder;
+  padding:20px;
 `
 
 

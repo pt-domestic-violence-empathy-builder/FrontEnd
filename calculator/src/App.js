@@ -11,28 +11,13 @@ import { Nav, FormContainer, Home, RightView, FindTab } from './components/style
 import MiscCosts from './components/miscCosts/miscRouter.js'
 import Submitted from './components/Completed/submitted.js'
 import FindShelter from './components/Find/findShelter.js'
+
 import Axios from 'axios';
 
-const Views = ({
-    budgetCost,
-    locationCost,
-    healthCost,
-    foodCost,
-    miscCost,
-    difference
-}) => {
 
 
-    if (budgetCost !== null && locationCost !== null && healthCost !== null && foodCost !== null && miscCost !== null) {
-        return (
-            <h4>Remaining Balance: {difference}</h4>
-        )
-    } else {
-        return <h1>Start Planning.</h1>
-    }
-}
-
-function App() {
+function App(props) {
+    
 
     const [locationCost,
         setLocationCost] = useState(null);
@@ -141,23 +126,23 @@ function App() {
                         </NavLink>
                     </Nav>
 
+
                     <FoodRouter onChange={getFoodCost} />
                     <MiscCosts onChange={getMiscCost} />
                     <Location onChange={getLocationCost} />
                     <Health onChange={getHealthCost} />
                     <Budget onChange={getBudgetCost} />
+
                     <Route excact path='/completed' component={(props) => (<Submitted {...props} isSubmitted={difference} />)} />
                 </FormContainer>
 
-                <div className='rightView'>
-                    <Views
-                        budgetCost={budgetCost}
-                        locationCost={locationCost}
-                        miscCost={miscCost}
-                        healthCost={healthCost}
-                        foodCost={foodCost}
-                        difference={difference} />
-                </div>
+                <RightView budgetCost={budgetCost}
+                    locationCost={locationCost}
+                    miscCost={miscCost}
+                    healthCost={healthCost}
+                    foodCost={foodCost}
+                    difference={difference} />
+
 
             </Home>
             <FindTab>

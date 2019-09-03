@@ -1,6 +1,7 @@
 import Styled from 'styled-components';
 
 const primary = 'rgb(99, 47, 141)';
+const primaryFont = `'Roboto', sans-serif;`
 
 const Nav = Styled.nav `
   display:flex;
@@ -46,10 +47,19 @@ const RightView = Styled.div `
   }
 `
 
+const Cost = Styled.div `
+  font-size:2rem;
+  color: white
+  font-family: ${primaryFont}
+  font-weight: bolder;
+  padding:20px;
+`
+
 
 export {
     Nav,
     FormContainer,
     Home,
-    RightView
+    RightView,
+    Cost
 };

@@ -7,31 +7,16 @@ import Budget from './components/Budget/budgetRouter.js';
 import FoodRouter from './components/Food/foodCostRouter.js';
 import {Button} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import {Nav, FormContainer, Home, RightView} from './components/styles.js';
+import {Nav, FormContainer, Home} from './components/styles.js';
 import MiscCosts from './components/miscCosts/miscRouter.js'
 import Submitted from './components/Completed/submitted.js'
+import RightView from './components/Views/rightView.js'
 import Axios from 'axios';
 
-const Views = ({
-    budgetCost,
-    locationCost,
-    healthCost,
-    foodCost,
-    miscCost,
-    difference
-}) => {
 
 
-    if (budgetCost !== null && locationCost !== null && healthCost !== null && foodCost !== null && miscCost !== null) {
-        return (
-            <h4>Remaining Balance: {difference}</h4>
-        )
-    } else {
-        return <h1>Start Planning.</h1>
-    }
-}
-
-function App() {
+function App(props) {
+    
 
     const [locationCost,
         setLocationCost] = useState(null);
@@ -139,7 +124,6 @@ function App() {
                             <Button content='Misc' size='small' color='green'/>
                         </NavLink>
                     </Nav>
-
                     <FoodRouter onChange={getFoodCost}/>
                     <MiscCosts onChange={getMiscCost}/>
                     <Location onChange={getLocationCost}/>
@@ -148,7 +132,7 @@ function App() {
                     <Route excact path='/completed' component={(props) => (<Submitted {...props} isSubmitted={difference} />)} />
                 </FormContainer>
 
-                <div className='rightView'>
+                {/* <div className='rightView'>
                     <Views
                         budgetCost={budgetCost}
                         locationCost={locationCost}
@@ -156,7 +140,13 @@ function App() {
                         healthCost={healthCost}
                         foodCost={foodCost}
                         difference={difference}/>
-                </div>
+                </div> */}
+                <RightView budgetCost={budgetCost}
+                    locationCost={locationCost}
+                    miscCost={miscCost}
+                    healthCost={healthCost}
+                    foodCost={foodCost}
+                    difference={difference} />
 
             </Home>
         </div>

@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Formik, FormikProps, Form, Field, withFormik} from 'formik';
+import React, { useEffect, useState } from 'react';
+import { Formik, FormikProps, Form, Field, withFormik } from 'formik';
 
 import * as Yup from 'yup';
 
@@ -34,7 +34,7 @@ const UserBudget = (props) => {
         <div className='budget-form'>
             <Form>
                 <h4>Let's get started.What is your budget?</h4>
-                <Field type='input' className='budget-input' name='budget' placeholder='$'/>
+                <Field type='input' className='budget-input' name='budget' placeholder='$' />
                 <button type='submit'>Next</button>
             </Form>
         </div>
@@ -42,13 +42,13 @@ const UserBudget = (props) => {
 }
 
 const formikHOC = withFormik({
-    mapToPropsValues({budget}) {
+    mapToPropsValues({ budget }) {
         return {
             budget: budget || ''
         };
     },
-    handleSubmit(values, {setStatus, resetForm}) {
-        console.log('handle submit: budget:', values);
+    handleSubmit(values, { setStatus, resetForm }) {
+        // console.log('handle submit: budget:', values);
         setStatus(values);
     }
 })(UserBudget)

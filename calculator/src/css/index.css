@@ -193,7 +193,8 @@ h4.destination-label {
   border: 3px outset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
-  width: 87%;
+  width: 93%;
+  margin: auto auto auto 0px;
 }
 form.transit-options {
   display: flex;
@@ -413,6 +414,7 @@ form.other button {
   background: teal;
   justify-content: center;
   border-radius: 0.5rem;
+  transition: 1s;
 }
 @media (max-width: 600px) {
   .rightView {
@@ -432,6 +434,21 @@ form.other button {
   font-size: 4rem;
   font-weight: bolder;
   text-align: center;
+}
+.rightView.teal {
+  background: teal;
+}
+.rightView.purple {
+  background: purple;
+}
+.rightView.red {
+  background: #db5555;
+}
+.rightView.blue {
+  background: #3e3e9e;
+}
+.rightView.green {
+  background: #4c7a4c;
 }
 .submitted-container {
   display: flex;

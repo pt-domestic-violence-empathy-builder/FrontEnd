@@ -3,7 +3,8 @@ import Styled from 'styled-components';
 const primary = 'rgb(99, 47, 141)';
 const maxContainerWidth = '940px';
 const mainFont = `'Roboto', sans-serif`;
-const Nav = Styled.nav`
+
+const Nav = Styled.nav `
   display:flex;
   flex-flow: row wrap;
   align-items:center;
@@ -12,7 +13,7 @@ const Nav = Styled.nav`
     margin: 0px -20px 0px -13px;
     }
 `
-const FormContainer = Styled.div`
+const FormContainer = Styled.div `
   display:flex;
   flex-flow: column;
   width:52%;
@@ -23,7 +24,7 @@ const FormContainer = Styled.div`
       
 `
 
-const Home = Styled.div`
+const Home = Styled.div `
     display:flex;
     flex-flow:row no-wrap;
     justify-content:space-between;
@@ -34,19 +35,20 @@ const Home = Styled.div`
     }
 `
 
-const RightView = Styled.div`
+const RightView = Styled.div `
   display:flex;
   flex-flow:column;
   align-items:center;
   width:50%
-  background:${primary};
+  background:teal;
   height:600px;
+  border-radius: .5rem;
 
-  h1{
+  h4{
     coloer:white;
   }
 `
-const FindTab = Styled.div`
+const FindTab = Styled.div `
   width:100%;
   max-width: 900px;
   display:flex;
@@ -72,20 +74,22 @@ const FindTab = Styled.div`
       font-size:4rem;
     }
   }
+  `
 
 const Cost = Styled.div `
   font-size:2rem;
   color: white
-  font-family: ${primaryFont}
+  font-family: white;
   font-weight: bolder;
   padding:20px;
 `
 
 
 export {
-  Nav,
-  FormContainer,
-  Home,
-  RightView,
-  FindTab
+    Nav,
+    FormContainer,
+    Home,
+    RightView,
+    FindTab,
+    Cost
 };

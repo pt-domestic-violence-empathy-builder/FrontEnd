@@ -7,8 +7,9 @@ import Budget from './components/Budget/budgetRouter.js';
 import FoodRouter from './components/Food/foodCostRouter.js';
 import { Button } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Nav, FormContainer, Home, RightView, FindTab } from './components/styles.js';
+import { Nav, FormContainer, Home, FindTab } from './components/styles.js';
 import MiscCosts from './components/miscCosts/miscRouter.js'
+import RightView from './components/Views/rightView.js'
 import Submitted from './components/Completed/submitted.js'
 import FindShelter from './components/Find/findShelter.js'
 
@@ -73,7 +74,7 @@ function App(props) {
                     setDifference(budgetCost - (locationCost + healthCost + foodCost + miscCost))
                 })
                 .catch((err) => {
-                    // console.log('update failed: ', err);
+                    console.log('update failed: ', err);
                 })
         }
         else {
@@ -84,7 +85,8 @@ function App(props) {
     }
 
     useEffect(() => {
-        console.log('difference of budget and relocation costs: ', calculateDiff());
+        // console.log('difference of budget and relocation costs: ', calculateDiff());
+        calculateDiff();
 
     }, [
             budgetCost,
@@ -92,7 +94,8 @@ function App(props) {
             healthCost,
             foodCost,
             miscCost,
-            difference
+            difference,
+            rightViewColor
         ])
 
     return (
@@ -119,7 +122,8 @@ function App(props) {
                     miscCost={miscCost}
                     healthCost={healthCost}
                     foodCost={foodCost}
-                    difference={difference} />
+                    difference={difference} 
+                    color={rightViewColor}/>
 
 
             </Home>

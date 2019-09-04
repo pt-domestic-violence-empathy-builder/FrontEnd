@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Cost} from '../styles';
+import { Cost } from '../styles';
 
 const RightView = (props) => {
     const { budgetCost,
@@ -7,9 +7,11 @@ const RightView = (props) => {
         healthCost,
         foodCost,
         miscCost,
-        difference } = props
+        difference,
+        color
+    } = props
 
-    const postCondition = budgetCost > null &&
+    const postCondition = budgetCost !== null &&
         locationCost !== null &&
         healthCost !== null &&
         foodCost !== null &&
@@ -21,9 +23,9 @@ const RightView = (props) => {
                 <h4> Remaining Balance: {difference}</ h4>
             </div>
         )
-    } else if(budgetCost > 0 ){
+    } else if (budgetCost > 0) {
         return (
-            <div className='rightView'>
+            <div className={`rightView ${color ? color : ''}`}>
                 <Cost>Your Budget: {budgetCost}</Cost>
                 <Cost>Relocation Cost: {locationCost}</Cost>
                 <Cost>Health Cost: {healthCost}</Cost>
@@ -32,9 +34,9 @@ const RightView = (props) => {
 
             </div>
         )
-    }else {
+    } else {
         return (
-            <div className='rightView'>
+            <div className={`rightView ${color ? color : ''}`}>
                 <h1> Start Planning. </h1>
             </div>
         )

@@ -8,7 +8,7 @@ const Nav = Styled.nav `
   display:flex;
   flex-flow: row wrap;
   align-items:center;
-  margin: auto 20px;
+  margin: auto ;
     @media(max-width:600px) {
     margin: 0px -20px 0px -13px;
     }

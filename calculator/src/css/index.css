@@ -405,6 +405,10 @@ form.other button {
     width: 100%;
   }
 }
+div#root {
+  background: url('../img/Frame.png');
+  background-size: contain;
+}
 .rightView {
   display: flex;
   flex-flow: column;

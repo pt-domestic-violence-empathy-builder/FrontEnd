@@ -33,6 +33,7 @@ function App(props) {
     const getMiscCost = (childData) => setMiscCost(childData);
     const getHealthCost = (childData) => setHealthCost(childData);
     const getBudgetCost = (childData) => setBudgetCost(childData);
+    // const setViewColor = (color) => setRightViewColor(Color)
 
     const calculateDiff = () => {
         // console.log('user Budget: ', budgetCost);

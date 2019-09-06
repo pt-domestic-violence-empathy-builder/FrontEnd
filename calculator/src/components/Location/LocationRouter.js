@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Destination from './destination.js';
 import Transportation from './transportation.js';
 import Rentals from './hotelsAndApt';
-import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 const LocationRouter = (props) => {
 
@@ -26,9 +26,9 @@ const LocationRouter = (props) => {
     // checks if object is empty
     function isEmpty(obj) {
         for (var key in obj) {
-            if (obj.hasOwnProperty(key)) 
+            if (obj.hasOwnProperty(key))
                 return false;
-            }
+        }
         return true;
     }
 
@@ -62,7 +62,7 @@ const LocationRouter = (props) => {
                 setAptTotal(2100 * 2);
                 break;
             default:
-                // code block
+            // code block
         }
 
         return movingTotal + hotelTotal + aptTotal;
@@ -71,37 +71,38 @@ const LocationRouter = (props) => {
     useEffect(() => {
         let total = getHotelTotal();
 
-        console.log('updated distance: ', distance);
-        console.log('update moving options: ', movingOption);
+        // console.log('updated distance: ', distance);
+        // console.log('update moving options: ', movingOption);
         if (isEmpty(movingOption) === false) {
-            console.log('total: ', getMovingTotal());
+            // console.log('total: ', getMovingTotal());
+            getMovingTotal();
         }
-        console.log(`relocation cost`, total);
+        // console.log(`relocation cost`, total);
         props.onChange(parseInt(total));
 
     }, [
-        distance,
-        movingOption,
-        movingTotal,
-        hotelTotal,
-        aptTotal,
-        rentals
-    ])
+            distance,
+            movingOption,
+            movingTotal,
+            hotelTotal,
+            aptTotal,
+            rentals
+        ])
 
     return (
         <div>
             <Route
                 exact
                 path='/location'
-                component={(props) => (<Destination {...props} onChange={getLocationData}/>)}/>
+                component={(props) => (<Destination {...props} onChange={getLocationData} />)} />
             <Route
                 exact
                 path='/location/transportation'
-                component={(props) => (<Transportation {...props} onChange={getMovingData}/>)}/>
+                component={(props) => (<Transportation {...props} onChange={getMovingData} />)} />
             <Route
                 exact
                 path='/location/rentals'
-                component={(props) => (<Rentals {...props} onChange={getRentalData}/>)}/>
+                component={(props) => (<Rentals {...props} onChange={getRentalData} />)} />
         </div>
     )
 }

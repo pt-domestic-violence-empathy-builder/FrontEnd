@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Router, Route, NavLink} from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { Router, Route, NavLink } from "react-router-dom"
 import UserBudget from './userBudget';
 
 const BudgetRouter = (props) => {
@@ -7,13 +7,13 @@ const BudgetRouter = (props) => {
 
     const getBudget = (childData) => setTotalBudget(childData);
 
-    useEffect(()=>{
-        console.log('User budget:', totalBudget.budget);
+    useEffect(() => {
+        // console.log('User budget:', totalBudget.budget);
         props.onChange(parseInt(totalBudget.budget))
-    },[totalBudget])
+    }, [totalBudget])
 
-    return(
-    <Route exact path='/' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
+    return (
+        <Route exact path='/' component={(props) => (<UserBudget {...props} onChange={getBudget} />)} />
     )
 }
 

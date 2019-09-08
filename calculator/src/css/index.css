@@ -151,6 +151,7 @@ table {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 .moving-form .location-form {
   display: flex;
@@ -195,6 +196,7 @@ h4.destination-label {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 form.transit-options {
   display: flex;
@@ -243,6 +245,7 @@ form.transit-options label {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 form.other {
   display: flex;
@@ -292,6 +295,7 @@ form.other button {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 .health-container form.health-form {
   display: flex;
@@ -344,6 +348,7 @@ form.other button {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 .budget-form form {
   display: flex;
@@ -487,6 +492,7 @@ div#root {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 .food-container form.food-form {
   display: flex;
@@ -528,6 +534,7 @@ div#root {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
 }
 .misc-container form.misc-form {
   display: flex;

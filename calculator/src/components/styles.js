@@ -10,7 +10,9 @@ const Nav = Styled.nav `
   align-items:center;
   margin: auto 0 0 -7px;
     @media(max-width:600px) {
-    margin: 0px -20px 0px -13px;
+    width: 55% ;
+    justify-content: center;
+    margin: 10px auto;
     }
 `
 const FormContainer = Styled.div `

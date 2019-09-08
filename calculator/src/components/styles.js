@@ -8,9 +8,11 @@ const Nav = Styled.nav `
   display:flex;
   flex-flow: row wrap;
   align-items:center;
-  margin: auto ;
+  margin: auto 0 0 -7px;
     @media(max-width:600px) {
-    margin: 0px -20px 0px -13px;
+    width: 55% ;
+    justify-content: center;
+    margin: 10px auto;
     }
 `
 const FormContainer = Styled.div `
@@ -83,7 +85,11 @@ const Cost = Styled.div `
   font-weight: bolder;
   padding:20px;
 `
-
+const NavBtn = Styled.div `
+  font: 1rem;
+  padding: 10px;
+  border: 1px solid ${props => props.color ? 'purple' : 'white'}
+`
 
 export {
     Nav,
@@ -91,5 +97,6 @@ export {
     Home,
     RightView,
     FindTab,
-    Cost
+    Cost,
+    NavBtn
 };

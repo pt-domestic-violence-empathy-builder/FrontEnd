@@ -151,6 +151,13 @@ table {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .moving-form {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 .moving-form .location-form {
   display: flex;
@@ -186,15 +193,22 @@ h4.destination-label {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 10px auto 0;
   align-items: center;
   height: 500px;
   max-width: 600px;
-  border: 3px outset #632f8d;
+  border: 3px inset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .transit-form {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 form.transit-options {
   display: flex;
@@ -234,15 +248,22 @@ form.transit-options label {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 10px auto 0;
   align-items: center;
   height: 500px;
   max-width: 600px;
-  border: 3px outset #632f8d;
+  border: 3px inset #632f8d;
   box-shadow: 10px 10px 40px #f7d5cc;
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .rent-form {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 form.other {
   display: flex;
@@ -283,7 +304,7 @@ form.other button {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto;
+  margin: 10px auto 0;
   align-items: center;
   height: 500px;
   max-width: 600px;
@@ -292,6 +313,13 @@ form.other button {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .health-container {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 .health-container form.health-form {
   display: flex;
@@ -335,7 +363,7 @@ form.other button {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-evenly;
-  margin: 10px auto 0px;
+  margin: 10px auto 0;
   align-items: center;
   height: 500px;
   max-width: 600px;
@@ -344,6 +372,13 @@ form.other button {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .budget-form {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 .budget-form form {
   display: flex;
@@ -487,6 +522,13 @@ div#root {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .food-container {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 .food-container form.food-form {
   display: flex;
@@ -528,6 +570,13 @@ div#root {
   border-radius: 0.5rem;
   width: 93%;
   margin: auto auto auto 0px;
+  background: white;
+}
+@media (max-width: 600px) {
+  .misc-container {
+    margin: 20px auto;
+    width: 100%;
+  }
 }
 .misc-container form.misc-form {
   display: flex;

@@ -4,7 +4,7 @@ const primary = 'rgb(99, 47, 141)';
 const maxContainerWidth = '940px';
 const mainFont = `'Roboto', sans-serif`;
 
-const Nav = Styled.nav `
+const Nav = Styled.nav`
   display:flex;
   flex-flow: row wrap;
   align-items:center;
@@ -15,7 +15,7 @@ const Nav = Styled.nav `
     margin: 10px auto;
     }
 `
-const FormContainer = Styled.div `
+const FormContainer = Styled.div`
   display:flex;
   flex-flow: column;
   width:52%;
@@ -26,7 +26,7 @@ const FormContainer = Styled.div `
       
 `
 
-const Home = Styled.div `
+const Home = Styled.div`
     display:flex;
     flex-flow:row no-wrap;
     justify-content:space-between;
@@ -37,7 +37,7 @@ const Home = Styled.div `
     }
 `
 
-const RightView = Styled.div `
+const RightView = Styled.div`
   display:flex;
   flex-flow:column;
   align-items:center;
@@ -50,7 +50,7 @@ const RightView = Styled.div `
     coloer:white;
   }
 `
-const FindTab = Styled.div `
+const FindTab = Styled.div`
   width:100%;
   max-width: 900px;
   display:flex;
@@ -63,6 +63,16 @@ const FindTab = Styled.div `
   height: 200px;
   margin: auto 19px;
   transition:0.5s;
+
+  @media(max-width: 600px) {
+    width:90%;
+    height: 300px;
+    h1{
+      text-align:center;
+    }
+  }
+
+
   &:hover{
     cursor:pointer;
     background: white;
@@ -71,6 +81,7 @@ const FindTab = Styled.div `
     opacity:0.8;
   }
 
+
   .find-tab{
     h1{
       font-size:4rem;
@@ -78,25 +89,21 @@ const FindTab = Styled.div `
   }
   `
 
-const Cost = Styled.div `
+const Cost = Styled.div`
   font-size:2rem;
   color: white
   font-family: white;
   font-weight: bolder;
   padding:20px;
 `
-const NavBtn = Styled.div `
-  font: 1rem;
-  padding: 10px;
-  border: 1px solid ${props => props.color ? 'purple' : 'white'}
-`
+
 
 export {
-    Nav,
-    FormContainer,
-    Home,
-    RightView,
-    FindTab,
-    Cost,
-    NavBtn
+  Nav,
+  FormContainer,
+  Home,
+  RightView,
+  FindTab,
+  Cost
+  
 };

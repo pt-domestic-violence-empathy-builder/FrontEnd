@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Formik, FormikProps, Form, Field, withFormik} from 'formik';
-import {Button} from 'semantic-ui-react';
-import Styled from 'styled-components';
+import { Form, Field, withFormik} from 'formik';
 import * as Yup from 'yup';
 import Axios from 'axios';
 
